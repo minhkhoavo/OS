@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #define max 1024
 void usage()
@@ -7,6 +8,8 @@ void usage()
 }
 int main(int argc, char *argv[])
 {
+    // tim kiem tu khoa va so lan xuat hien trong tap tin
+    // ./lab3.3.exe test.txt f
     FILE *fp;
     char fline[max];
     char *newline;
@@ -19,7 +22,7 @@ int main(int argc, char *argv[])
     }
     if (!(fp = fopen(argv[1],"r")))
     {
-        printf("grep : couldnot open file : % s \n", argv[1]);
+        printf("grep : couldnot open file : %s \n", argv[1]);
         exit(1);
     }
     while (fgets(fline, max, fp) != NULL)
@@ -29,7 +32,7 @@ int main(int argc, char *argv[])
             *newline ="\0";
         if (strstr(fline, argv[2]) != NULL)
         {
-            printf("% s : % d % s \n", argv[1], count, fline);
+            printf("%s : %d %s \n", argv[1], count, fline);
             occurrences++;
         }
     }

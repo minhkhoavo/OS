@@ -3,6 +3,7 @@
 #include <stdio.h>
 main(int argc, char *argv[])
 {
+    // dem so luong space, tham so truyen vao ./program.exe test.txt
     FILE *fp;
     char ch;
     int sc = 0;
